@@ -25,9 +25,10 @@ board.on("ready", function() {
     pin: 1,
   });
 
-  var degrees = 10;
+  // var degrees = 10;
 
-  a.cw(1);
-  b.cw(1);
-  // b.to(degrees);
+   a.cw(0);
+   b.cw(0);
+  //a.stop();
+  //b.stop();
 });

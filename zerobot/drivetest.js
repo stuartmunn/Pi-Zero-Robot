@@ -43,14 +43,14 @@ board.on("ready", function() {
   // Add servos to REPL (optional)
   this.repl.inject({
     wheelsleft: wheelsleft,
-    wheelsright: wheelsright,
-    allwheels: allwheels
+    wheelsright: wheelsright
+    // allwheels: allwheels
   });
 
-wheelsleft.cw(0.1);
-wheelsright.cw(0.1);
+wheelsleft.cw(1);
+wheelsright.ccw(1);
 // Stop driving after 3 seconds
-  this.wait(3000, function() {
+  this.wait(5000, function() {
     wheelsleft.stop();
     wheelsright.stop();
   });
