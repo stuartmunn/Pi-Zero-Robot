@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Pi Robot Control</title>
+  <style>
+	body { background-color: black; color: white; }
+	button { background-color: black; color: white;}
+	
+	#stop { position: relative; left: 94px;}
+	#fwda { position: relative; left: 10px;}
+	#reva { position: relative; left: 10px;}
+	#fwdl { position: relative; top: 66px;}
+	#revl { position: relative; top: -130px;}
+	#fwdr { position: relative; top: 66px; left: 20px;}
+	#revr { position: relative; top: -130px; left: 20px;}
+	.control { padding; 10px;}
+   </style>
+  <script>
+	function sendAction(url) {
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.open("GET", url, true);
+        xmlhttp.send();
+	}
+  </script>
+ </head>
+ <body>
+	<h1>Pi Zerobot Remote Control</h1>
+	
+	<div id="control1" class="control">
+		<button id="fwdl" onclick="sendAction('/action/fwdl')" value="Left Forward"><img src="forward.png" width="64px" height="64px" /><br>LEFT</button>
+		<button id = "fwda" onclick="sendAction('/action/fwda')"><img src="forward.png" /><br>All Forward</button>
+		<button id = "fwdr" onclick="sendAction('/action/fwdr')"><img src="forward.png" width="64px" height="64px" /><br />RIGHT</button>
+	</div><br />
+	<div id="control2" class="control">
+		<button id = "stop" onclick="sendAction('/action/STOP')"><img src="stop.png" /></button>
+	</div></br>
+	<div id="control3" class="control">
+		<button id = "revl" onclick="sendAction('/action/revl')">LEFT<br /><img src="reverse.png" width="64px" height="64px" /></button>
+		<button id = "reva" onclick="sendAction('/action/reva')">All Reverse<br /><img src="reverse.png" /></button>
+		<button id = "revr" onclick="sendAction('/action/revr')">RIGHT<br /><img src="reverse.png" width="64px" height="64px" /></button>
+	</div>
+	<div id="camera"><!-- Streaming Camera Functionality not yet built. space for it here--></div>
+ </body>
+</html>
